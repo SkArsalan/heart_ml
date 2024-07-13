@@ -1,0 +1,72 @@
+post:
+  tags:
+  - "predict"
+  summary: "Predict heart disease"
+  description: "Predicts the likelihood of heart disease based on input features"
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: "body"
+    name: "body"
+    description: "Input features for prediction"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        age:
+          type: "integer"
+          format: "int32"
+        sex:
+          type: "integer"
+          format: "int32"
+        cp:
+          type: "integer"
+          format: "int32"
+        trestbps:
+          type: "integer"
+          format: "int32"
+        chol:
+          type: "integer"
+          format: "int32"
+        fbs:
+          type: "integer"
+          format: "int32"
+        restecg:
+          type: "integer"
+          format: "int32"
+        thalach:
+          type: "integer"
+          format: "int32"
+        exang:
+          type: "integer"
+          format: "int32"
+        oldpeak:
+          type: "number"
+          format: "float"
+        slope:
+          type: "integer"
+          format: "int32"
+        ca:
+          type: "integer"
+          format: "int32"
+        thal:
+          type: "integer"
+          format: "int32"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "object"
+        properties:
+          prediction:
+            type: "integer"
+            format: "int32"
+          probability:
+            type: "array"
+            items:
+              type: "number"
+              format: "float"
+    400:
+      description: "Invalid input"

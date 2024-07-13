@@ -1,0 +1,12 @@
+get:
+  tags:
+  - "home"
+  summary: "Home page"
+  description: "Returns a welcome message"
+  produces:
+  - "text/html"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "string"
